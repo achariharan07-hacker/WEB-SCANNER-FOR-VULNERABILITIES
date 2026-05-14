@@ -52,8 +52,8 @@ def idor_scan(url, param, values=DEFAULT_IDOR):
             print(f"Error: {e}")
 
 if __name__ == "__main__":
-    target_url = "http://testphp.vulnweb.com/login.php"
+    target_url = input("Enter target URL (e.g. http://example.com/login): ").strip()
     sqli_scan(target_url, "username")
     xss_scan(target_url, "search")
     lfi_scan(target_url, "file")
-    idor_scan("http://testphp.vulnweb.com/profile.php", "id")
+    idor_scan(target_url, "id")
